@@ -1,13 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
-import TreeComponent from './components/TreeComponent';
-import StackedModals from './components/StackedModals';
+import { Button } from './reusable-components/Button/Button';
+import { useState } from 'react';
+import { Header } from './reusable-components/Header/Header';
+import NavigationMenuDemo from './reusable-components/NavigationMenu/NavigationMenu';
 
 function App() {
+  
   return (
     <div className="App">
-      <TreeComponent />
-      <StackedModals />
+      <Header />
+      <NavigationMenuDemo />
     </div>
   );
 }

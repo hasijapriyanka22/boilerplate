@@ -1,0 +1,38 @@
+/* basic styling for every button */
+.button {
+  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  border: 0;
+  border-radius: 3em;
+  cursor: pointer;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+}
+.button__input {
+  margin: 0px 8px 0px 0px;
+}
+/* change the primary button text and background color here */
+.button--primary {
+  color: white;
+  background-color: #1ea7fd; 
+}
+/* change the secondary button text and background color here */
+.button--secondary {
+  color: #333;
+  background-color: transparent;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+}
+/* can define different size for the button */
+.button--small {
+  font-size: 12px;
+  padding: 10px 16px;
+}
+.button--medium {
+  font-size: 14px;
+  padding: 11px 20px;
+}
+.button--large {
+  font-size: 16px;
+  padding: 12px 24px;
+}
