@@ -2,26 +2,39 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './button.css';
 
-export const Button = ({ primary, backgroundColor, size, label, type, ...props }) => {
+export const Button = ({ 
+  primary, 
+  backgroundColor, 
+  size, 
+  label, 
+  type, 
+  onButtonClick,
+  onChange,
+  ...props 
+}) => {
   const mode = primary ? 'button--primary' : 'button--secondary';
 
   return (
     <>
       {type !== 'none' ?
-        <label 
-          className={['button', `button--${size}`, mode].join(' ')} 
-          style={backgroundColor && { backgroundColor }}>
-            <input
-              type={type}
-              className="button__input"
-              {...props}
-            />
-          {label}
-        </label> : 
+        <div 
+            className={['button', `button--${size}`, mode].join(' ')} 
+            style={backgroundColor && { backgroundColor }}
+            onClick={onButtonClick}>
+              <input
+                type={type}
+                className="button__input"
+                onChange={onChange}
+                {...props}
+              />
+            {label}
+        </div>
+      : 
         <button
           type="button"
           className={['button', `button--${size}`, mode].join(' ')}
           style={backgroundColor && { backgroundColor }}
+          onClick={onButtonClick}
           {...props}>
           {label}
         </button>
@@ -46,7 +59,7 @@ Button.defaultProps = {
   primary: false,
   size: 'medium', // Default to button size
   type: 'none', // Default to button type
-  onClick: undefined,
+  onButtonClick: undefined,
   onChange: undefined,
 };
 
