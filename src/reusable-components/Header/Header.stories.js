@@ -18,3 +18,12 @@ export const LoggedIn = {
 };
 
 export const LoggedOut = {};
+
+export const WithNavBar = {
+  args: {
+    user: {
+      name: 'Jane Doe',
+    },
+    showNavBar: true
+  },
+};

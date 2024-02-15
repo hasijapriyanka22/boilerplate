@@ -3,13 +3,24 @@ import PropTypes from 'prop-types';
 
 import { Button } from '../Button/Button';
 import './header.css';
+import { NavBar } from '../NavBar/NavBar';
 
-export const Header = ({ logo, heading, user, onLogin, onLogout, onCreateAccount }) => (
+export const Header = ({ 
+  logo, 
+  heading, 
+  user, 
+  onLogin, 
+  onLogout, 
+  onCreateAccount, 
+  showNavBar,
+  navBarComponent,
+}) => (
   <header>
     <div className="header">
       <div>
         {logo}
         <h1>{heading}</h1>
+        {showNavBar && <NavBar component={navBarComponent}/>}
       </div>
       <div>
         {user ? (
@@ -31,16 +42,19 @@ export const Header = ({ logo, heading, user, onLogin, onLogout, onCreateAccount
 );
 
 Header.propTypes = {
-  logo: PropTypes.element.isRequired,
-  heading: PropTypes.string.isRequired,
+  logo: PropTypes.element,
+  heading: PropTypes.string,
   user: PropTypes.shape({
     name: PropTypes.string.isRequired,
   }),
   onLogin: PropTypes.func.isRequired,
   onLogout: PropTypes.func.isRequired,
   onCreateAccount: PropTypes.func.isRequired,
+  showNavBar: PropTypes.bool,
+  navBarComponent: PropTypes.element
 };
 
 Header.defaultProps = {
   user: null,
+  showNavBar: false,
 };

@@ -3,14 +3,14 @@ import './App.css';
 import { Button } from './reusable-components/Button/Button';
 import { useState } from 'react';
 import { Header } from './reusable-components/Header/Header';
-import NavigationMenuDemo from './reusable-components/NavigationMenu/NavigationMenu';
+import { NavBar } from './reusable-components/NavBar/NavBar';
 
 function App() {
   
   return (
     <div className="App">
-      <Header />
-      <NavigationMenuDemo />
+      <Header showNavBar={true}/>
+      <NavBar />
     </div>
   );
 }
